@@ -1,0 +1,9 @@
+.sign_up {
+  display: table;
+  label, input {
+    display: table-cell;
+  }
+  input {
+    margin-bottom: 10px;
+  }
+}
