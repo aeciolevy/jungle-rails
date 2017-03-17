@@ -132,5 +132,39 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+prod1 = Product.find(1)
+prod2 = Product.find(2)
+prod3 = Product.find(3)
+prod4 = Product.find(4)
+
+prod1.reviews.create!({
+  user_id: 2,
+  description: "nice",
+  rating: 4
+  })
+
+prod1.reviews.create!({
+  user_id: 3,
+  description: "cool",
+  rating: 2
+  })
+
+prod2.reviews.create!({
+  user_id: 4,
+  description: "bad",
+  rating: 1
+  })
+
+prod3.reviews.create!({
+  user_id: 1,
+  description: "not bad",
+  rating: 2
+  })
+
+prod4.reviews.create!({
+  user_id: 4,
+  description: "great",
+  rating: 5
+  })
 
 puts "DONE!"
