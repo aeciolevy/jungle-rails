@@ -7,7 +7,9 @@
     </dt>
     <dd>  <%= rev.created_at.strftime("%Y-%m-%d") %>
     <% if current_user == rev.user %>
-    <%= link_to "", product_review_path(@product, rev), method: :delete,
+    <%= link_to "", product_review_path(@product, rev),
+    method: :delete,
+    data: {confirm: "Are you sure?"},
     :class => "fa fa-trash"  %>
     <% end %>
     </dd>
