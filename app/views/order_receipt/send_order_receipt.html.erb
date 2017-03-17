@@ -6,7 +6,11 @@
   <body>
     <h1>Hi <%= @user.first_name %></h1>
     <p>
-      Sample mail sent using smtp.
+    You bought:
     </p>
+    <% @order.line_items.each do |item| %>
+    <p> <%= item.product.name %> - <%= item.quantity %> - <%= item.item_price %>:
+    Total : <%= item.total_price %> </p>
+    <% end %>
   </body>
 </html>
