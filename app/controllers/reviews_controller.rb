@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.product_id = params[:product_id]
-    @review.user_id = current_user.id
+    @review.user = current_user
     if @review.save
       redirect_to product_path(@review.product_id)
     else
@@ -23,9 +23,9 @@ class ReviewsController < ApplicationController
   private
 
   def require_login
-    unless logged_in?
+    if !current_user
       flash[:error] = "You must be logged in to access this section"
-      redirect_to new_login_url # halts request cycle
+      redirect_to "/sessions/new"
     end
   end
 

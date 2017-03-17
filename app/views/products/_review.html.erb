@@ -6,12 +6,12 @@
       <% end %>
     </dt>
     <dd>  <%= rev.created_at.strftime("%Y-%m-%d") %>
-    <% if current_user == User.find(rev.user_id) %>
+    <% if current_user == rev.user %>
     <%= link_to "", product_review_path(@product, rev), method: :delete,
     :class => "fa fa-trash"  %>
     <% end %>
     </dd>
-    <dt> <%= User.find(rev.user_id).first_name %>: </dt>
+    <dt> <%= rev.user.first_name %>: </dt>
     <dd> <%= rev.description %> </dd>
   </dl>
 </div>
