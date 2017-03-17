@@ -5,8 +5,15 @@
         <i class="fa fa-star" aria-hidden="true" style="color: #f4c542;"></i>
       <% end %>
     </dt>
-    <dd>  <%= rev.created_at.strftime("%Y-%m-%d") %> </dd>
+    <dd>  <%= rev.created_at.strftime("%Y-%m-%d") %>
+    <% if current_user == User.find(rev.user_id) %>
+    <%= link_to "", product_review_path(@product, rev), method: :delete,
+    :class => "fa fa-trash"  %>
+    <% end %>
+    </dd>
     <dt> <%= User.find(rev.user_id).first_name %>: </dt>
     <dd> <%= rev.description %> </dd>
+
+
   </dl>
 </div>
