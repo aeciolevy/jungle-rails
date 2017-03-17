@@ -27,7 +27,7 @@
     </div>
     </div>
 
-    <%= form_for @new_review, url: product_reviews_path(@product.id) do |f| %>
+    <%= form_for @new_review, url: product_reviews_path(@product) do |f| %>
       Description: <%= f.text_area :description %><br />
       Rating : <%= f.select :rating, options_for_select(1..5) %> <br />
       <%= f.submit %>
@@ -39,7 +39,7 @@
         <h3 class="panel-title">Product Reviews</h3>
       </div>
       <div class="panel-body">
-        <% @review.each do |rev| %>
+        <% @reviews.each do |rev| %>
         <%= render 'review', rev: rev %>
         <% end %>
       </div>
