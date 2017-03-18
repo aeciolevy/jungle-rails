@@ -26,13 +26,15 @@
       </div>
     </div>
     </div>
+    <div class="jumbotron">
     <% if current_user %>
     <%= form_for @new_review, url: product_reviews_path(@product) do |f| %>
-      Description: <%= f.text_area :description %> <br/>
-      Rating : <%= f.select :rating, options_for_select(1..5) %> <br />
-      <%= f.submit %>
+     <span> Description: </span> <%= f.text_area :description, :class => "form-control" %> <br/>
+      <div class="elements"> <span> Rating: </span> <%= f.select :rating, options_for_select(1..5) %>
+      <%= f.submit :class => "btn btn-primary" %> </div>
     <% end %>
     <% end %>
+    </div>
     <div class="panel panel-info">
       <div class="panel-heading">
         <h3 class="panel-title">Product Reviews</h3>
