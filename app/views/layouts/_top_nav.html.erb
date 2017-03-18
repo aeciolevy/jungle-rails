@@ -26,12 +26,7 @@
           </ul>
         </li>
       </ul>
-      <% if current_user %>
-        Signed in as <%= current_user.first_name %> | <%= link_to "Logout", "/sessions/#{current_user.id}", method: :delete
-         %>
-      <% else %>
-        <%= link_to 'Login', new_session_path %> | <%= link_to 'Sign up', [:new, :user] %>
-      <% end %>
+
       <ul class="nav navbar-nav navbar-right">
        <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -50,6 +45,12 @@
             <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
           <% end %>
         </li>
+        <% if current_user %>
+        <li> <span class="text-signin">Signed in as  <%= current_user.first_name %> </span> </li> <li> <%= link_to "Logout", "/sessions/#{current_user.id}", method: :delete, :class => "fa fa-sign-out"
+         %> </li>
+       <% else %>
+       <li> <%= link_to 'Login', new_session_path, :class => "fa fa-sign-in" %> </li> <li> <%= link_to 'Sign up', [:new, :user] %>
+      <% end %> </li>
       </ul>
     </div>
   </div>

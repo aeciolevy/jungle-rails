@@ -63,6 +63,7 @@ main section.categories-show {
         top: 0;
       }
 
+
       &:hover {
 
         border-color: #999;
@@ -83,6 +84,14 @@ main section.products-show {
       max-width: 100%;
     }
   }
+  .jumbotron{
+      margin-top: 40px;
+      div{
+        float: right;
+      }
+
+      }
+
 }
 
 
