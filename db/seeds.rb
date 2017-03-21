@@ -138,9 +138,9 @@ prod3 = Product.find(3)
 prod4 = Product.find(4)
 
 User.create!({
-  first_name: 'Isaac'
-  last_name: 'Newton'
-  email: 'isaac@newton.com'
+  first_name: 'Isaac',
+  last_name: 'Newton',
+  email: 'isaac@newton.com',
   password: '$2a$10$sPWWNq8cIl2bRvPGoDPfyOsI.1tZoDFfdh3Lq2oF9Ooe31xF5Kdv6'
   })
 
