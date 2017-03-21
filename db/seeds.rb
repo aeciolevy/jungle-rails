@@ -144,8 +144,6 @@ User.create!({
   password: '$2a$10$sPWWNq8cIl2bRvPGoDPfyOsI.1tZoDFfdh3Lq2oF9Ooe31xF5Kdv6'
   })
 
-
-
 prod1.reviews.create!({
   user_id: 1,
   description: "nice",
