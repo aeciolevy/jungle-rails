@@ -54,7 +54,10 @@ class OrdersController < ApplicationController
     end
     order.save!
 
-    OrderReceipt.send_order_receipt(current_user, order).deliver_now
+    if current_user
+       OrderReceipt.send_order_receipt(current_user, order).deliver_now
+    end
+
 
     order
   end
