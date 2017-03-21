@@ -34,6 +34,7 @@ cat3 = Category.find_or_create_by! name: 'Furniture'
 puts "Re-creating Products ..."
 
 Product.destroy_all
+Review.destroy_all
 
 cat1.products.create!({
   name:  'Men\'s Classy shirt',
@@ -132,43 +133,43 @@ cat3.products.create!({
   price: 2_483.75
 })
 
-prod1 = Product.find(1)
-prod2 = Product.find(2)
-prod3 = Product.find(3)
-prod4 = Product.find(4)
+prodRed = Product.find_by(name: 'Red Bookshelf')
+prodChair = Product.find_by(name: 'Electric Chair')
+prodBed = Product.find_by(name: 'Optimal Sleeping Bed')
+prodHot = Product.find_by(name: 'Hotdog Slicer')
 
 User.create!({
   first_name: 'Isaac',
   last_name: 'Newton',
-  email: 'isaac@newton.com',
+  email: 'isaac2@newton.com',
   password: '$2a$10$sPWWNq8cIl2bRvPGoDPfyOsI.1tZoDFfdh3Lq2oF9Ooe31xF5Kdv6'
   })
 
-prod1.reviews.create!({
+prodRed.reviews.create!({
   user_id: 1,
   description: "nice",
   rating: 4
   })
 
-prod1.reviews.create!({
+prodRed.reviews.create!({
   user_id: 1,
   description: "cool",
   rating: 2
   })
 
-prod2.reviews.create!({
+prodChair.reviews.create!({
   user_id: 1,
   description: "bad",
   rating: 1
   })
 
-prod3.reviews.create!({
+prodBed.reviews.create!({
   user_id: 1,
   description: "not bad",
   rating: 2
   })
 
-prod4.reviews.create!({
+prodHot.reviews.create!({
   user_id: 1,
   description: "great",
   rating: 5

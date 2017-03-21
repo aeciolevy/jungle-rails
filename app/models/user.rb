@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   validates :email, uniqueness: { case_sensitive: false }
   validates :email, presence: true
   validates :first_name, presence: true
