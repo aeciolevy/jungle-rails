@@ -6,7 +6,7 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 This is [Jungle Online Version](https://calm-chamber-47452.herokuapp.com).
 
 ## Contributes for this project
-We worked with this application, and contribute to create an admin category section, create models to user and reviews and views as well. We created an signup page and login too. We formarted a mailer to order receipt.
+We contributed to create an admin category section, create models to user and reviews. We created an signup page and login too. We formarted a mailer to order receipt. We worked in back-end and front-end roles.
 
 ## Instructions to test orders
 For test order follow the strip instructions [Test Card] (https://stripe.com/docs/testing).
