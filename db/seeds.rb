@@ -138,12 +138,6 @@ prodChair = Product.find_by(name: 'Electric Chair')
 prodBed = Product.find_by(name: 'Optimal Sleeping Bed')
 prodHot = Product.find_by(name: 'Hotdog Slicer')
 
-User.create!({
-  first_name: 'Isaac',
-  last_name: 'Newton',
-  email: 'isaac2@newton.com',
-  password: '$2a$10$sPWWNq8cIl2bRvPGoDPfyOsI.1tZoDFfdh3Lq2oF9Ooe31xF5Kdv6'
-  })
 
 prodRed.reviews.create!({
   user_id: 1,
