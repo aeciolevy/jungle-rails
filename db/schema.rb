@@ -63,9 +63,12 @@ ActiveRecord::Schema.define(version: 20170317041153) do
     t.integer  "rating"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "users_id"
+    t.integer  "products_id"
   end
 
-  add_index "reviews", ["product_id"], name: "index_reviews_on_product_id", using: :btree
+  add_index "reviews", ["products_id"], name: "index_reviews_on_products_id", using: :btree
+  add_index "reviews", ["users_id"], name: "index_reviews_on_users_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
@@ -79,4 +82,6 @@ ActiveRecord::Schema.define(version: 20170317041153) do
   add_foreign_key "line_items", "orders"
   add_foreign_key "line_items", "products"
   add_foreign_key "products", "categories"
+  add_foreign_key "reviews", "products"
+  add_foreign_key "reviews", "users"
 end
