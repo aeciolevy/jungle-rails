@@ -7,6 +7,20 @@
   </header>
   <p class="description">
     <%= product.description %>
+    <% unless @average[product.id].nan? %>
+    <span class="rate">
+    <% if @average[product.id].modulo(1) == 0.0 %>
+      <% @average[product.id].truncate.times do %>
+          <i class="fa fa-star" aria-hidden="true" style="color: #f4c542;"></i>
+      <% end %>
+    <% else %>
+      <% @average[product.id].truncate.times do %>
+          <i class="fa fa-star" aria-hidden="true" style="color: #f4c542;"></i>
+      <% end %>
+      <i class="fa fa-star-half-o" aria-hidden="true" style="color: #f4c542;"></i>
+      <% end %>
+    </span>
+    <% end %>
   </p>
   <footer class="actions">
     <%= link_to add_item_cart_path(product_id: product.id), class: 'btn btn-primary', method: :put do %>
