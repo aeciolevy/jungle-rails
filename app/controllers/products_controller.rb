@@ -14,17 +14,10 @@ class ProductsController < ApplicationController
   private
 
   def calculate_average
-    @products = Product.all.order(created_at: :desc)
+    @products = Product.order(created_at: :desc)
     rate_hash = {}
     @products.each do |prod|
-      @reviews = Review.where(product_id: prod.id)
-      sum = 0
-      average = 0
-      @reviews.each do |rev|
-        sum = sum + rev.rating
-      end
-      average = sum.to_f / @reviews.size.to_f
-      rate_hash[prod.id] = average
+      rate_hash[prod.id] = prod.avg_rating.to_f
     end
     rate_hash
   end

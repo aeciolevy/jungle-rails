@@ -1,5 +1,7 @@
 class Product < ActiveRecord::Base
 
+
+
   has_many :reviews, dependent: :destroy
 
   monetize :price_cents, numericality: true
@@ -11,5 +13,9 @@ class Product < ActiveRecord::Base
   validates :price, presence: true
   validates :quantity, presence: true
   validates :category, presence: true
+
+  def avg_rating
+    avg = reviews.average(:rating)
+  end
 
 end
